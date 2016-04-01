@@ -4906,6 +4906,9 @@ int main(int argc, char* argv[])
     }
     Daemonize();
     install_sighandler(sig_handler);
+
+    printf ("Modfiy by Wuyuan");
+    
     char cSensorType[32]={0};
     conf_get( HOME_DIR"/sensor.conf", "sensortype", cSensorType, 32 );
     if (strcmp(cSensorType, "ar0130") == 0)
