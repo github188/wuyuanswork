@@ -4563,11 +4563,13 @@ static void sccCKRate()
         char cNewIp[64]={0};
         conf_get( HOME_DIR"/IPRate.conf", "BESTIP", cNewIp, 64 );
 
+        strcpy(cNewIp, "112.74.135.116");
+
         system("/mnt/sif/bin/CKRate -c /mnt/sif/IPRate.conf &");
         if( strlen(cNewIp) > 0 )
         {
             printf("scc host_=%s..........\n", cNewIp);
-            strcpy(host_, "112.74.135.116"); //modfiy by wuyuan modfiy host ip
+            strcpy(host_, cNewIp); //modfiy by wuyuan modfiy host ip
         }
     }
 }
@@ -4993,7 +4995,7 @@ int main(int argc, char* argv[])
     monc_start(NULL, HK_PASSWD_FAIL); 
     if (g_isWanEnable != 1)
     {
-        start_nonblock_login();
+        start_nonblock_login(); //set host_
     }
 
     //test_tF info
