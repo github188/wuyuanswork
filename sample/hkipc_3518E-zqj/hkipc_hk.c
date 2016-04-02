@@ -4561,13 +4561,11 @@ static void sccCKRate()
     if( strcmp(host_,"www.scc21.com")==0||strcmp(host_,"www.uipcam.com")==0|| strcmp(host_,"hzd.scc21.net")==0||strcmp(host_,"sulatra.scc21.net")==0)
     {
         char cNewIp[64]={0};
-        conf_set( HOME_DIR"/IPRate.conf", "BESTIP", "112.74.135.116" );
-        conf_get( HOME_DIR"/IPRate.conf", "BESTIP", cNewIp, 64 );
-        
 
-        //strcpy(cNewIp, "112.74.135.116");
+        conf_get( HOME_DIR"/IPRate.conf", "BESTIP", cNewIp, 64 );
 
         system("/mnt/sif/bin/CKRate -c /mnt/sif/IPRate.conf &");
+
         if( strlen(cNewIp) > 0 )
         {
             printf("scc host_=%s..........\n", cNewIp);
