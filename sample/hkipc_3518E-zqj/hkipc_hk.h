@@ -32,7 +32,7 @@
  *   1: enable
  */
 //#define HK_PLATFORM_HI3518C 0
-#define HK_PLATFORM_HI3518E 1 //microstar.
+#define HK_PLATFORM_HI3518E 0 //microstar.
 #define DEV_KELIV           0 //klv 3518e (steven).
 #define DEV_ROBOT           0 //ji si wei robot.
 #define DEV_INFRARED        1 //xhd infrared remoter.
