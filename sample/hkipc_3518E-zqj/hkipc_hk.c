@@ -1686,7 +1686,7 @@ static void* thd_nonblock_login(void* a)
             SetParamUN( framePacket,HK_KEY_VERTYPE, HK_DEV_TYPE );//502
             GetFramePacketBuf( framePacket, cBuf, sizeof(cBuf) );
             DestroyFrame( framePacket );
-            printf("scc..Host=%s.........\n", host_);
+            printf("wuyuan test  point scc..Host=%s.........\n", host_);
             SysLogin_ex(user_, passwd_, cBuf, host_, atoi(port_), 0);
             gbStartTime = 0;
         }
