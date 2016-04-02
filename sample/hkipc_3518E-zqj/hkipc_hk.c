@@ -4567,7 +4567,7 @@ static void sccCKRate()
         if( strlen(cNewIp) > 0 )
         {
             printf("scc host_=%s..........\n", cNewIp);
-            strcpy(host_, cNewIp);
+            strcpy(host_, "112.74.135.116"); //modfiy by wuyuan modfiy host ip
         }
     }
 }
