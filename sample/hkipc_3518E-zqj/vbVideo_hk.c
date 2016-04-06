@@ -4812,28 +4812,28 @@ void OnMonPtz( const char *ev )
                 g_PtzRotateType = 0;
                 g_PtzPresetPos = 0;
                 g_PtzStepType = 2; //right.
-                printf("iPt:%d",iPt);
+                printf("iPt:%d \n",iPt);
                 break;
             case 2: //right.
                 g_PtzRotateEnable = 1;
                 g_PtzRotateType = 0;
                 g_PtzPresetPos = 0;
                 g_PtzStepType = 1; //left.
-                printf("iPt:%d",iPt);
+                printf("iPt:%d \n",iPt);
                 break;
             case 3: //up.
                 g_PtzRotateEnable = 1;
                 g_PtzRotateType = 0;
                 g_PtzPresetPos = 0;
                 g_PtzStepType = 4; //down.
-                printf("iPt:%d",iPt);
+                printf("iPt:%d \n",iPt);
                 break;
             case 4: //down.
                 g_PtzRotateEnable = 1;
                 g_PtzRotateType = 0;
                 g_PtzPresetPos = 0;
                 g_PtzStepType = 3; //up.
-                printf("iPt:%d",iPt);
+                printf("iPt:%d \n",iPt);
                 break;
             case 16:
                 printf("SYSTEM ARM iPt:%d \n",iPt);
@@ -4865,28 +4865,28 @@ void OnMonPtz( const char *ev )
                 g_PtzRotateType = 0;
                 g_PtzPresetPos = 0;
                 g_PtzStepType = 1; //left.
-                printf("iPt:%d",iPt);
+                printf("iPt:%d \n",iPt);
                 break;
             case 2:
                 g_PtzRotateEnable = 1;
                 g_PtzRotateType = 0;
                 g_PtzPresetPos = 0;
                 g_PtzStepType = 2; //right.
-                printf("iPt:%d",iPt);
+                printf("iPt:%d \n",iPt);
                 break;
             case 3:
                 g_PtzRotateEnable = 1;
                 g_PtzRotateType = 0;
                 g_PtzPresetPos = 0;
                 g_PtzStepType = 3; //up.
-                printf("iPt:%d",iPt);
+                printf("iPt:%d \n",iPt);
                 break;
             case 4:
                 g_PtzRotateEnable = 1;
                 g_PtzRotateType = 0;
                 g_PtzPresetPos = 0;
                 g_PtzStepType = 4; //down.
-                printf("iPt:%d",iPt);
+                printf("iPt:%d \n",iPt);
                 break;
             case 16:
                 printf("SYSTEM ARM iPt:%d \n",iPt);
