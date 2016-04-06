@@ -49,6 +49,8 @@
 #define DEV_SHANGHAI        0 //Shanghai (Chen ZhiMing)
 #define DEV_CHEANGDU        0 //jia bao - adc
 
+#define WUYUAN_DEBUG        1 //wuyuan debug model
+
 #define AUDIO_SET_WIFI      1 //audio set wifi
 
 #define JPEG_SNAP           0

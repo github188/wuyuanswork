@@ -4886,6 +4886,11 @@ int main(int argc, char* argv[])
     int IRCutBoardType = 0;
     int threq = 0;
     int m433enable = 0;
+#if WUYUAN_DEBUG
+    // test for cycle send alarm modify by wuyuan
+    static unsigned int frontTime = 0;
+    unsigned char sendCount = 0;
+#endif
 
     hk_set_system_time(); //update device time.
 
@@ -5147,7 +5152,22 @@ int main(int argc, char* argv[])
     #if ((0 == DEV_KELIV) && (0 == DEV_DOORBELL))
         if (m433enable == 0)
         {
-            CheckIOAlarm();//check AlarmIn & AlarmOut.
+            CheckIOAlarm();//check AlarmIn & AlarmOut. 
+
+    #if WUYUAN_DEBUG
+            if(video_properties_.vv[HKV_MotionSensitivity] > 0)
+            {
+                unsigned int currentTime = Getms();
+                
+                if(currentTime - frontTime > 5000)
+                {
+                   sendCount++;
+                   raise_alarm_server(sendCount % 7,0, NULL);     
+                   frontTime = Getms();
+                }
+            }
+    #endif
+            
         }
     #endif
         hk_IrcutCtrl( IRCutBoardType );//check & control Ircut mode.
