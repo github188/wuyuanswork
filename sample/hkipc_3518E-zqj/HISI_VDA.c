@@ -185,7 +185,7 @@ HI_S32 VDA_MdPrtAp(FILE *fp, VDA_DATA_S *pstVdaData)
         //printf("----->s_MDAlarm_Pix_Cnt:%d,  AlarmPixelCount:%d <-----\n", s_MDAlarm_Pix_Cnt, pstVdaData->unData.stMdData.u32AlarmPixCnt);
         if (pstVdaData->unData.stMdData.u32AlarmPixCnt > s_MDAlarm_Pix_Cnt)
         {
-            CheckAlarm(1, 7, 0, NULL); //alarm notification.
+            CheckAlarm(1, 1, 0, NULL); //alarm notification.
             /*
         #if (DEV_DOORBELL)
             if ( 1 == HK_Check_PIR_State() )

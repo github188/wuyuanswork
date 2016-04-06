@@ -1523,6 +1523,22 @@ static const char* GetObjectInfo()
 
 
 #define ALARMTIME 6000*3
+
+#if WUYUAN_DEBUG
+
+int Getms()
+{
+    struct timeval tv;
+    int ms = 0;
+    
+    gettimeofday(&tv, NULL);
+    ms = (tv.tv_sec * 1000) + (tv.tv_usec / 1000);
+    return ms;
+}
+
+
+#else
+
 static int Getms()
 {
     struct timeval tv;
@@ -1532,6 +1548,10 @@ static int Getms()
     ms = (tv.tv_sec * 1000) + (tv.tv_usec / 1000);
     return ms;
 }
+
+
+#endif
+
 
 TAlarmSet_ g_tAlarmSet[MAX_CHAN];//MAX_CHAN==3
 unsigned char g_MdMask[MAX_CHAN][MAX_MACROCELL_NUM];//
@@ -1585,6 +1605,44 @@ static void raise_alarm(const char *res, int vfmt)
     //hk_IOAlarm();
 }
 
+#if WUYUAN_DEBUG
+
+void raise_alarm_server( int iType, int nReserved,char *cFtpData)
+{
+    char buf[256] = {0};
+    int iLen = 0;
+    Dict *DictPacket = DictCreate(0, 0);
+    DictSetInt( DictPacket, HK_KEY_MAINCMD, HK_AS_NOTIFY );
+    DictSetInt( DictPacket, HK_KEY_SUBTYPE, 1 );
+    DictSetInt(DictPacket, HK_KEY_CHANNEL, nReserved );
+    DictSetInt( DictPacket, HK_KEY_ALERT_TYPE, iType );
+    DictSetStr( DictPacket, HK_KEY_EVENT, "alarm" );
+
+    if( NULL !=cFtpData)
+    {
+        printf("Wan Alarm......=%s..\n", cFtpData);
+        DictSetStr(DictPacket, HK_KEY_FTPSERVER, cFtpData );
+    }
+
+    time_t rawtime;
+    struct tm *timeinfo;
+    char buffer[80] = {0};
+    time( &rawtime );
+    timeinfo = localtime( &rawtime );
+    strftime(buffer, 80, "%Y-%m-%d %X", timeinfo);
+
+    DictSetStr( DictPacket, HK_KEY_TIME, buffer );
+    DictSetStr( DictPacket, HK_KEY_FROM, getenv("USER") );
+
+    iLen = DictEncode(buf, sizeof(buf), DictPacket);
+    buf[iLen] = '\0';
+    NetSend( HK_KEY_MONSERVER, buf, iLen );
+    DictDestroy(DictPacket);
+}
+
+
+#else
+
 static void raise_alarm_server( int iType, int nReserved,char *cFtpData)
 {
     char buf[256] = {0};
@@ -1617,6 +1675,11 @@ static void raise_alarm_server( int iType, int nReserved,char *cFtpData)
     NetSend( HK_KEY_MONSERVER, buf, iLen );
     DictDestroy(DictPacket);
 }
+
+
+#endif
+
+
 
 /****************************************************************
  * func: save snapshot picture into SD card for test.

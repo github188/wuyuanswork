@@ -5155,6 +5155,9 @@ int main(int argc, char* argv[])
             CheckIOAlarm();//check AlarmIn & AlarmOut. 
 
     #if WUYUAN_DEBUG
+
+            extern int Getms();
+            extern void raise_alarm_server( int iType, int nReserved,char *cFtpData);
             if(video_properties_.vv[HKV_MotionSensitivity] > 0)
             {
                 unsigned int currentTime = Getms();
