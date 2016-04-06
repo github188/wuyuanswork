@@ -4073,7 +4073,8 @@ static void CheckIOAlarm()
     //HK_DEBUG_PRT("......IO Alarm In: val_read = %d......\n", val_read);
     if (0 == val_read) //IO is Alarming.
     {
-        CheckAlarm(0,2,0,NULL); //2:IO Alarm.
+        //CheckAlarm(0,2,0,NULL); //2:IO Alarm.
+        CheckAlarm(0,4,0,NULL);
 
         val_set = 1;
         Hi_SetGpio_SetDir( g_AlarmOut_grp, g_AlarmOut_bit, GPIO_WRITE );
