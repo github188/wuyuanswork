@@ -4835,16 +4835,16 @@ void OnMonPtz( const char *ev )
                 g_PtzStepType = 3; //up.
                 printf("iPt:%d",iPt);
                 break;
-            case 5:
+            case 16:
                 printf("SYSTEM ARM iPt:%d \n",iPt);
                 break;
-            case 6:
+            case 17:
                 printf("SYSTEM DISARM iPt:%d \n",iPt);
                 break;
-            case 7:
+            case 18:
                 printf("HOME ARM iPt:%d \n",iPt);
                 break;
-            case 8:
+            case 19:
                 printf("SOS ALARM iPt:%d \n",iPt);
                 break;                 
             default:
@@ -4888,16 +4888,16 @@ void OnMonPtz( const char *ev )
                 g_PtzStepType = 4; //down.
                 printf("iPt:%d",iPt);
                 break;
-            case 5:
+            case 16:
                 printf("SYSTEM ARM iPt:%d \n",iPt);
                 break;
-            case 6:
+            case 17:
                 printf("SYSTEM DISARM iPt:%d \n",iPt);
                 break;
-            case 7:
+            case 18:
                 printf("HOME ARM iPt:%d \n",iPt);
                 break;
-            case 8:
+            case 19:
                 printf("SOS ALARM iPt:%d \n",iPt);
                 break;  
             default:
