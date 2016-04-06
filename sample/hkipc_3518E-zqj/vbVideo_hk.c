@@ -2298,6 +2298,7 @@ int CheckAlarm(int iChannel, int iType, int nReserved, char *cFtpData)
     //else if (cur - raise_time > 6000)
     if (cur - raise_time > 2000)
     {
+        printf("alarm type : %d \n",iType);
         raise_alarm_server(iType ,nReserved, cFtpData);
         sccLocalAlarm(iChannel, iType, nReserved, cFtpData);
 
