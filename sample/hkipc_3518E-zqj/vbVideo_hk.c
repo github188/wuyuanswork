@@ -4812,25 +4812,41 @@ void OnMonPtz( const char *ev )
                 g_PtzRotateType = 0;
                 g_PtzPresetPos = 0;
                 g_PtzStepType = 2; //right.
+                printf("iPt:%d",iPt);
                 break;
             case 2: //right.
                 g_PtzRotateEnable = 1;
                 g_PtzRotateType = 0;
                 g_PtzPresetPos = 0;
                 g_PtzStepType = 1; //left.
+                printf("iPt:%d",iPt);
                 break;
             case 3: //up.
                 g_PtzRotateEnable = 1;
                 g_PtzRotateType = 0;
                 g_PtzPresetPos = 0;
                 g_PtzStepType = 4; //down.
+                printf("iPt:%d",iPt);
                 break;
             case 4: //down.
                 g_PtzRotateEnable = 1;
                 g_PtzRotateType = 0;
                 g_PtzPresetPos = 0;
                 g_PtzStepType = 3; //up.
+                printf("iPt:%d",iPt);
                 break;
+            case 5:
+                printf("SYSTEM ARM iPt:%d \n",iPt);
+                break;
+            case 6:
+                printf("SYSTEM DISARM iPt:%d \n",iPt);
+                break;
+            case 7:
+                printf("HOME ARM iPt:%d \n",iPt);
+                break;
+            case 8:
+                printf("SOS ALARM iPt:%d \n",iPt);
+                break;                 
             default:
                 g_PtzRotateEnable = 0;
                 g_PtzStepType = 0;	
@@ -4838,7 +4854,7 @@ void OnMonPtz( const char *ev )
                 g_PtzPresetPos = 0;
                 break;
         }
-        printf("[%s, %d]...iPt:%d, g_PtzRotateEnable:%d, g_PtzStepType:%d, g_PtzRotateType:%d, g_PtzPresetPos:%d...\n", __func__, __LINE__, iPt, g_PtzRotateEnable, g_PtzStepType, g_PtzRotateType, g_PtzPresetPos);
+        //printf("[%s, %d]...iPt:%d, g_PtzRotateEnable:%d, g_PtzStepType:%d, g_PtzRotateType:%d, g_PtzPresetPos:%d...\n", __func__, __LINE__, iPt, g_PtzRotateEnable, g_PtzStepType, g_PtzRotateType, g_PtzPresetPos);
     }
     else
     {    
@@ -4849,25 +4865,41 @@ void OnMonPtz( const char *ev )
                 g_PtzRotateType = 0;
                 g_PtzPresetPos = 0;
                 g_PtzStepType = 1; //left.
+                printf("iPt:%d",iPt);
                 break;
             case 2:
                 g_PtzRotateEnable = 1;
                 g_PtzRotateType = 0;
                 g_PtzPresetPos = 0;
                 g_PtzStepType = 2; //right.
+                printf("iPt:%d",iPt);
                 break;
             case 3:
                 g_PtzRotateEnable = 1;
                 g_PtzRotateType = 0;
                 g_PtzPresetPos = 0;
                 g_PtzStepType = 3; //up.
+                printf("iPt:%d",iPt);
                 break;
             case 4:
                 g_PtzRotateEnable = 1;
                 g_PtzRotateType = 0;
                 g_PtzPresetPos = 0;
                 g_PtzStepType = 4; //down.
+                printf("iPt:%d",iPt);
                 break;
+            case 5:
+                printf("SYSTEM ARM iPt:%d \n",iPt);
+                break;
+            case 6:
+                printf("SYSTEM DISARM iPt:%d \n",iPt);
+                break;
+            case 7:
+                printf("HOME ARM iPt:%d \n",iPt);
+                break;
+            case 8:
+                printf("SOS ALARM iPt:%d \n",iPt);
+                break;  
             default:
                 g_PtzRotateEnable = 0;
                 g_PtzStepType = 0;	
@@ -4875,7 +4907,8 @@ void OnMonPtz( const char *ev )
                 g_PtzPresetPos = 0;
                 break;
         }
-        printf("[%s, %d]...iPt:%d, g_PtzRotateEnable:%d, g_PtzStepType:%d, g_PtzRotateType:%d, g_PtzPresetPos:%d...\n", __func__, __LINE__, iPt, g_PtzRotateEnable, g_PtzStepType, g_PtzRotateType, g_PtzPresetPos);
+        //printf("Receive data : iPt")
+        //printf("[%s, %d]...iPt:%d, g_PtzRotateEnable:%d, g_PtzStepType:%d, g_PtzRotateType:%d, g_PtzPresetPos:%d...\n", __func__, __LINE__, iPt, g_PtzRotateEnable, g_PtzStepType, g_PtzRotateType, g_PtzPresetPos);
     }
 #endif
     return;
