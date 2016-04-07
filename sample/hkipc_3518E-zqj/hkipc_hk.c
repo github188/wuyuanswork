@@ -5106,7 +5106,7 @@ int main(int argc, char* argv[])
     #if WUYUAN_DEBUG
  
     // 测试写文件
-     // 创建一个文件
+    // 创建一个文件
     setupAFile(REMOTEFILEPATH);
     // 写入数据
     int len = strlen("test string 1234 wuyuan you are great!!!");
@@ -5126,9 +5126,10 @@ int main(int argc, char* argv[])
     {
         insertString(REMOTEFILEPATH,WRITETOTAIL,"test string 1234 wuyuan you are great!!!");
         
-    }
- 
-    #endif    
+    } 
+    #endif  
+    
+/*<<<<<<<<<<<<<<<<<<<<<<<<<<main loop>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     for ( ; !quit_; counter++)
     {
         if (1 != HI3518_WDTFeed())

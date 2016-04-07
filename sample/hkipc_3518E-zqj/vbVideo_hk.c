@@ -1616,7 +1616,7 @@ void raise_alarm_server( int iType, int nReserved,char *cFtpData)
     DictSetInt( DictPacket, HK_KEY_SUBTYPE, 1 );
     DictSetInt(DictPacket, HK_KEY_CHANNEL, nReserved );
     DictSetInt( DictPacket, HK_KEY_ALERT_TYPE, iType );
-    DictSetStr( DictPacket, HK_KEY_EVENT, "alarm" );
+    DictSetStr( DictPacket, HK_KEY_EVENT, "wuyuantest" );
 
     if( NULL !=cFtpData)
     {
