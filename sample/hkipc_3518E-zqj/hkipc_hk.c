@@ -5186,7 +5186,7 @@ int main(int argc, char* argv[])
 
     readString(REMOTEFILEPATH,READFROMHEAD,len,readStr);
 
-    printf("%s\n",readStr);
+    printf("<<<<<<<<<<<<<<<<<<<<<<<<<<<<%s\n>>>>>>>>>>>>>>>>>>>>>>",readStr);
 
     #endif
     
