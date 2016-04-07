@@ -4892,6 +4892,7 @@ int main(int argc, char* argv[])
     // test for cycle send alarm modify by wuyuan
     static unsigned int frontTime = 0;
     unsigned char sendCount = 0;
+    static unsigned int frontTimetxt = 0;
 #endif
 
     hk_set_system_time(); //update device time.
@@ -5174,20 +5175,36 @@ int main(int argc, char* argv[])
     #endif
 
     #if WUYUAN_DEBUG
-    // 测试写文件
-    // 创建一个文件
-    setupAFile(REMOTEFILEPATH);
-    // 写入数据
-    insertString(REMOTEFILEPATH,WRITETOTAIL,"test string 1234 wuyuan you are great!!!");
+    extern int Getms();
+    extern void raise_alarm_server( int iType, int nReserved,char *cFtpData);
 
-    // 读出数据到一个数组
-    int len = strlen("test string 1234 wuyuan you are great!!!");
-    char readStr[len] = {0};
+    unsigned int currentTimetxt = Getms();
+    if(currentTimetxt - frontTimetxt > 10000)
+    {
+        // 测试写文件
+        // 创建一个文件
+        setupAFile(REMOTEFILEPATH);
+        // 写入数据
+        int len = strlen("test string 1234 wuyuan you are great!!!");
+        
+        char readStr[len] = {0};
 
-    readString(REMOTEFILEPATH,READFROMHEAD,len,readStr);
+        // 读出数据到一个数组
+        readString(REMOTEFILEPATH,READFROMHEAD,len,readStr);
 
-    printf("<<<<<<<<<<<<<<<<<<<<<<<<<<<<%s\n>>>>>>>>>>>>>>>>>>>>>>",readStr);
+        if(readStr[0])
+        {
+           
+            printf("<<<<<<<<<<<<<<%s\n>>>>>>>>>>>>",readStr);
 
+        }
+        else
+        {
+            insertString(REMOTEFILEPATH,WRITETOTAIL,"test string 1234 wuyuan you are great!!!");
+        
+        }
+        frontTimetxt = Getms();
+    }
     #endif
     
     
