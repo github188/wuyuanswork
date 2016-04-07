@@ -23,6 +23,8 @@
 #include "hk_message.h"
 #include "hk_sysaudio.h"
 
+#include "filesystem.h"
+
 #if ENABLE_ONVIF
     #include "IPCAM_Export.h"
 #endif
@@ -5170,6 +5172,25 @@ int main(int argc, char* argv[])
                 }
             }
     #endif
+
+    #if WUYUAN_DEBUG
+    // 测试写文件
+    // 创建一个文件
+    setupAFile(REMOTEFILEPATH);
+    // 写入数据
+    insertString(REMOTEFILEPATH,WRITETOTAIL,"test string 1234 wuyuan you are great!!!");
+
+    // 读出数据到一个数组
+    int len = strlen("test string 1234 wuyuan you are great!!!");
+    char readStr[len] = {0};
+
+    readString(REMOTEFILEPATH,READFROMHEAD,len,readStr);
+
+    printf("%s\n",readStr);
+
+    #endif
+    
+    
             
         }
     #endif

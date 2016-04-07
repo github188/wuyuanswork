@@ -236,3 +236,32 @@ vbVideo_hk.c (sample\hkipc_3518e-zqj):        g_iMonitorStatus = 11 - video_prop
 vbVideo_hk.c (sample\hkipc_3518e-zqj):    video_properties_.vv[HKV_MotionSensitivity] = iSensit; 
 vbVideo_hk.c (sample\hkipc_3518e-zqj):    HK_DEBUG_PRT("motionsensitivity: %d, g_bAlarmThread: %d\n", video_properties_.vv[HKV_MotionSensitivity], g_bAlarmThread);
 vbVideo_hk.c (sample\hkipc_3518e-zqj):    g_MotionDetectSensitivity = video_properties_.vv[HKV_MotionSensitivity];
+---- CheckAlarm Matches (3 in 0 files) ----
+vbVideo_hk.c (sample\hkipc_3518e-zqj)://extern int g_startCheckAlarm;
+vbVideo_hk.c (sample\hkipc_3518e-zqj):int CheckAlarm(int iChannel, int iType, int nReserved, char *cFtpData)
+vbVideo_hk.c (sample\hkipc_3518e-zqj):        CheckAlarm(iObj, nAlarmType,nReserved, NULL);
+---- Write Matches (23 in 0 files) ----
+File_sd_hk.c (sample\hkipc_3518e-zqj):        WriteFileHeader(&m_fileHead);
+File_sd_hk.c (sample\hkipc_3518e-zqj):void WriteFrameHead(FILE* pFile, long nID, int nLength, unsigned int nDataType/* = HK_MFF_VIDEO | HK_MFF_MPEG4*/,int iStreamType)
+File_sd_hk.c (sample\hkipc_3518e-zqj):int Write_(long nID, const void* pBuffer, int nLength,int iFream, unsigned int nDataType/* = HK_MFF_VIDEO | HK_MFF_MPEG4*/,int iStreamType)
+File_sd_hk.c (sample\hkipc_3518e-zqj):    WriteFrameHead(g_fp, nID, nLength, nDataType, iStreamType);
+File_sd_hk.c (sample\hkipc_3518e-zqj):    //WriteFileHeader(&m_fileHead);
+File_sd_hk.c (sample\hkipc_3518e-zqj):int WriteFileHeader(FileHead_* pFileHead)
+File_sd_hk.c (sample\hkipc_3518e-zqj):static int Write(int obj, const char* buf, unsigned int len, long flags)
+File_sd_hk.c (sample\hkipc_3518e-zqj):    printf("hkSdParam.leftSize:%d, hkSdParam.audio:%d, hkSdParam.loopWrite:%d, obj:%d, flags:%d...\n", hkSdParam.leftSize, hkSdParam.audio, hkSdParam.loopWrite, obj, flags);
+File_sd_hk.c (sample\hkipc_3518e-zqj):        if (hkSdParam.loopWrite == 1)
+File_sd_hk.c (sample\hkipc_3518e-zqj):        WriteFileHeader(&m_fileHead);
+File_sd_hk.c (sample\hkipc_3518e-zqj):        file_sd_inst.Write         = &Write;
+File_sd_hk.c (sample\hkipc_3518e-zqj):static int GetTfDataWrite()
+File_sd_hk.c (sample\hkipc_3518e-zqj):        WriteFileHeader(&m_fileHead);
+File_sd_hk.c (sample\hkipc_3518e-zqj):            Write_( 0, g_cDataBuf, len, 0, HK_MFF_AUDIO|HK_MFF_G711, 0 );
+File_sd_hk.c (sample\hkipc_3518e-zqj):        Write_( 0, g_cDataBuf, len, iFream, HK_MFF_VIDEO|HK_MFF_MPEG4, iStreamType );
+File_sd_hk.c (sample\hkipc_3518e-zqj):        iret = GetTfDataWrite();
+File_sd_hk.c (sample\hkipc_3518e-zqj):                if( hkSdParam.loopWrite == 1 )
+File_sd_hk.c (sample\hkipc_3518e-zqj):    if( hkSdParam.loopWrite == 1 )
+File_sd_hk.c (sample\hkipc_3518e-zqj):    WriteFileHeader(&m_fileHead);
+File_sd_hk.c (sample\hkipc_3518e-zqj):    if( ((hkSdParam.splite <= 0) || (hkSdParam.leftSize <= HK_SD_SPLITE)) && (hkSdParam.loopWrite == 0) )
+File_sd_hk.c (sample\hkipc_3518e-zqj):    conf_set_int(HOME_DIR"/deo.conf", "loop_write", hkSdParam.loopWrite);
+---- GetTfDataWrite Matches (2 in 0 files) ----
+File_sd_hk.c (sample\hkipc_3518e-zqj):static int GetTfDataWrite()
+File_sd_hk.c (sample\hkipc_3518e-zqj):        iret = GetTfDataWrite();
