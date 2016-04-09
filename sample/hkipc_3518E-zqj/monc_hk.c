@@ -1074,6 +1074,7 @@ static void OnGetWanDevParam( int nCmd,  Dict *d )
             OnGetWanPpoe( nCmd, iSubCmd, d);
             break;
         case HK_PENETRATE_DATA:
+            printf("OnGetWanDevParam----");
             OnPenetrateData( nCmd, iSubCmd, d);
             break;
         case HK_WEB_WIFI_INFO:
@@ -2542,6 +2543,7 @@ static void OnSetOnvifInfo(int nCmd,int iSubCmd, int hkid, Dict *d)
 static void OnSetMon433(int nCmd, int iSubCmd, int hkid, Dict *d)
 {
     char *cCode = DictGetStr( d, "code");
+    printf("cCode is :%s",cCode);
     //int iCode = DictGetInt( d, "code");
     int iHome = DictGetInt( d, "home");
     int iHomeFlag = DictGetInt( d, "homeflag");
@@ -2626,6 +2628,7 @@ static void OnSetDevParam( int nCmd, int hkid, Dict *d,const char *buf)
             OnSetMon433(nCmd, iSubCmd, hkid, d);
             break;
         case HK_PENETRATE_DATA:
+            printf("OnSetDevParam------");
             OnPenetrateData(nCmd, iSubCmd, d);
             break;
         default:
