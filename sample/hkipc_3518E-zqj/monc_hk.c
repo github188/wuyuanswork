@@ -755,14 +755,14 @@ static void OnPenetrateData( int nCmd, int iSubCmd, Dict *d)
 #if 1
     char *cData = DictGetStr(d, HK_KEY_DEVPARAM );
     printf("scc...Penetrate...%s...\n",cData );
-    printf("____####____####___%s___####____####____",cData);
+    printf("____####____####___%s___####____####____\r\n",cData);
 
     char *cDevid = DictGetStr( d, HK_KEY_FROM );
-    printf("____####___%s___####____",cDevid);
+    printf("____####___%s___####____\r\n",cDevid);
 
     
     char *cUserid = DictGetStr( d, HK_KEY_TO );
-    printf("____%s____",cUserid); 
+    printf("____%s____\r\n",cUserid); 
     
     //unsigned int ulParam = DictGetInt( d, HK_KEY_UIPARAM );
     Dict *DictPacket = DictCreate( 0, 0 );
