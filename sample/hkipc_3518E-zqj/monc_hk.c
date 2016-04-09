@@ -758,7 +758,12 @@ static void OnPenetrateData( int nCmd, int iSubCmd, Dict *d)
     printf("____####____####___%s___####____####____",cData);
 
     char *cDevid = DictGetStr( d, HK_KEY_FROM );
+    printf("____####___%s___####____",cDevid);
+
+    
     char *cUserid = DictGetStr( d, HK_KEY_TO );
+    printf("____%s____",cUserid); 
+    
     //unsigned int ulParam = DictGetInt( d, HK_KEY_UIPARAM );
     Dict *DictPacket = DictCreate( 0, 0 );
 
