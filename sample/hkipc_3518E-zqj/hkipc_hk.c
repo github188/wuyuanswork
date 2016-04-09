@@ -5193,7 +5193,7 @@ int main(int argc, char* argv[])
                 if(currentTime - frontTime > 5000)
                 {
                    sendCount++;
-                   raise_alarm_server(sendCount % 7,0, "1234_hahahaha_test_test");     
+                   raise_alarm_server(sendCount % 7,0, "123456789abc");     
                    frontTime = Getms();
                 }
             }
