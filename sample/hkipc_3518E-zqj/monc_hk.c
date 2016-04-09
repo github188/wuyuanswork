@@ -1526,7 +1526,7 @@ static void OnSendData( Dict *d )
     unsigned int ulParam = DictGetInt(d, HK_KEY_UIPARAM );
     //sleep(20);
     //sccRecvAPPData( cData, ulParam );
-    //printf("scc..sccRecvAPPData=%s..111111111....\n", cData);
+    printf("scc..sccRecvAPPData=%s..111111111....\n", cData);
 }
 
 //204 open,205 alarm, 206 alarm close, 207 test, 208 Get Dev.
@@ -1773,10 +1773,6 @@ int monc_callback(int len, const char* buf)
            break;
         case HK_MON_SET_DEVPARAM://Set Wan 
            OnSetWanDevParam( nCmd,  d, buf);
-           break;
-        case HK_MON_SET_DEVPARAM:
-           printf("OnSetDevParam------");
-           OnPenetrateData(nCmd, 0, d);
            break;
         default:
             //printf("%.*s\n", len, buf);
