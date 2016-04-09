@@ -755,7 +755,7 @@ static void OnPenetrateData( int nCmd, int iSubCmd, Dict *d)
 #if 1
     char *cData = DictGetStr(d, HK_KEY_DEVPARAM );
     printf("scc...Penetrate...%s...\n",cData );
-    printf("_####____####__________%s___####_______####____",cData);
+    printf("____####____####___%s___####____####____",cData);
 
     char *cDevid = DictGetStr( d, HK_KEY_FROM );
     char *cUserid = DictGetStr( d, HK_KEY_TO );
