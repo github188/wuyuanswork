@@ -1774,9 +1774,9 @@ int monc_callback(int len, const char* buf)
         case HK_MON_SET_DEVPARAM://Set Wan 
            OnSetWanDevParam( nCmd,  d, buf);
            break;
-        case HK_PENETRATE_DATA:
+        case HK_MON_SET_DEVPARAM:
            printf("OnSetDevParam------");
-           OnPenetrateData(nCmd, iSubCmd, d);
+           OnPenetrateData(nCmd, 0, d);
            break;
         default:
             //printf("%.*s\n", len, buf);
