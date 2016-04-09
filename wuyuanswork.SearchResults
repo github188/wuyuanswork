@@ -265,3 +265,69 @@ File_sd_hk.c (sample\hkipc_3518e-zqj):    conf_set_int(HOME_DIR"/deo.conf", "loo
 ---- GetTfDataWrite Matches (2 in 0 files) ----
 File_sd_hk.c (sample\hkipc_3518e-zqj):static int GetTfDataWrite()
 File_sd_hk.c (sample\hkipc_3518e-zqj):        iret = GetTfDataWrite();
+---- onSetDevParam Matches (0 in 0 files) ----
+---- onSetDevParam Matches (0 in 0 files) ----
+---- onSetDev Matches (12 in 0 files) ----
+vbVideo_hk.c (sample\hkipc_3518e-zqj):void OnMonsetDevResolutionOv2643( const char *ev )
+vbVideo_hk.c (sample\hkipc_3518e-zqj):            printf("[%s, %d]...OnMonsetDevResolutionOv2643 failed......\n", __func__, __LINE__);
+vbVideo_hk.c (sample\hkipc_3518e-zqj):            printf("[%s, %d]...OnMonsetDevResolutionOv2643 failed......\n", __func__, __LINE__);
+vbVideo_hk.c (sample\hkipc_3518e-zqj):void OnMonSetDevIRate( const char* ev )
+vbVideo_hk.c (sample\hkipc_3518e-zqj):void OnMonSetDevRate( const char* ev )
+vbVideo_hk.c (sample\hkipc_3518e-zqj):static void OnSetDevAperture( HKFrameHead *pFrameHead)
+vbVideo_hk.c (sample\hkipc_3518e-zqj):static void OnMonSetDevTranslate( const char * ev )
+vbVideo_hk.c (sample\hkipc_3518e-zqj):            OnSetDevAperture( pFrameHead);
+vbVideo_hk.c (sample\hkipc_3518e-zqj):            OnMonSetDevRate( ev );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):            OnMonSetDevIRate( ev );//I frame interval.
+vbVideo_hk.c (sample\hkipc_3518e-zqj):            OnMonsetDevResolutionOv2643( ev );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):            OnMonSetDevTranslate( ev ); //translate.
+---- OnPeneprateData Matches (0 in 0 files) ----
+---- GetParamUN Matches (45 in 0 files) ----
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iEnv = GetParamUN( pFrameHead, HK_KEY_RESOLU );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iFlag = GetParamUN( pFrameHead, HK_KEY_FLAG );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):        int iStream = GetParamUN( pFrameHead, "phstream" );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):        int iRate = GetParamUN( pFrameHead, HK_KEY_RATE );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iEnv = GetParamUN( pFrameHead, HK_KEY_IRATE );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iEnv = GetParamUN( pFrameHead, HK_KEY_RATE );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iEnv = GetParamUN( pFrameHead, HK_KEY_RESOLU );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iEnv = GetParamUN( pFrameHead, HK_KEY_SENSITIVITY );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iFlag = GetParamUN(pFrameHead, HK_KEY_DEVPARAM);
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    i = GetParamUN( pFrameHead, HK_KEY_FOCUS);
+vbVideo_hk.c (sample\hkipc_3518e-zqj):	ulpcam = GetParamUN( pFrameHead, HK_KEY_UIPARAM);
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iFlag = GetParamUN( pFrameHead, HK_KEY_RESTYPE );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iOpenOrClose = GetParamUN( pFrameHead, HK_KEY_DEVPARAM );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iID = GetParamUN(pFrameHead,HK_KEY_REC_ID);
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int  iSerID = GetParamUN(pFrameHead, HK_KEY_DEVPARAM);
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iPt = GetParamUN( pFrameHead, HK_KEY_PT );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iPtAuto = GetParamUN( pFrameHead, HK_KEY_DEVPARAM );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iPt = GetParamUN( pFrameHead, HK_KEY_PT );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iFlag = GetParamUN(pFrameHead, HK_KEY_RESTYPE);
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iPreset = GetParamUN(pFrameHead, HK_KEY_DEVPARAM);
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iPreset = GetParamUN( pFrameHead, HK_KEY_DEVPARAM );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iValue = GetParamUN(pFrameHead,HK_KEY_IOHIGHORLOW );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iValue = GetParamUN(pFrameHead,HK_KEY_DEVPARAM );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iValue = GetParamUN(pFrameHead,HK_KEY_DEVPARAM );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iCount = GetParamUN( pFrameHead, HK_KEY_INDEX );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iSensit = GetParamUN( pFrameHead, HK_KEY_SENSITIVITY);
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iResole = GetParamUN( pFrameHead, HK_KEY_RESOLU );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):                int iRngXY = GetParamUN( pFrameHead, cKey);
+vbVideo_hk.c (sample\hkipc_3518e-zqj):                int iRngWH = GetParamUN( pFrameHead, cYKey);
+vbVideo_hk.c (sample\hkipc_3518e-zqj):                int iRngXY = GetParamUN( pFrameHead, cKey);
+vbVideo_hk.c (sample\hkipc_3518e-zqj):                int iRngWH = GetParamUN( pFrameHead, cYKey);
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iLight = GetParamUN( pFrameHead,HK_KEY_DEVPARAM);
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iFlag = GetParamUN( pFrameHead,HK_KEY_FLAG);//Time open or close
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iAlLight = GetParamUN( pFrameHead,HK_KEY_DEVPARAM);
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    mc = GetParamUN( pFrameHead,HK_KEY_SUBCMD );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iAlarm = GetParamUN( pFrameHead, HK_KEY_IOHIGHORLOW );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iValue = GetParamUN(pFrameHead, HK_KEY_DEVPARAM );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iSaturation = GetParamUN( pFrameHead, HK_KEY_DEVPARAM );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int nSharpness = GetParamUN( pFrameHead, HK_KEY_DEVPARAM);
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iExpos = GetParamUN( pFrameHead, HK_KEY_DEVPARAM);
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iColor = GetParamUN( pFrameHead, HK_KEY_DEVPARAM );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iBrightness = GetParamUN( pFrameHead,HK_KEY_DEVPARAM );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iContrast = GetParamUN( pFrameHead, HK_KEY_DEVPARAM );
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    int iFlag = GetParamUN(pFrameHead,HK_KEY_FLAG);
+vbVideo_hk.c (sample\hkipc_3518e-zqj):    mc = GetParamUN( pFrameHead, HK_KEY_MAINCMD );
+---- OnMonSetDevRate Matches (2 in 0 files) ----
+vbVideo_hk.c (sample\hkipc_3518e-zqj):void OnMonSetDevRate( const char* ev )
+vbVideo_hk.c (sample\hkipc_3518e-zqj):            OnMonSetDevRate( ev );
+---- OnSetDevParam Matches (0 in 0 files) ----

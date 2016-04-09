@@ -5111,7 +5111,7 @@ int main(int argc, char* argv[])
     // 写入数据
     int len = strlen("test string 1234 wuyuan you are great!!!");
         
-    char readStr[len] = {0};
+    char readStr[100] = {0};
 
     // 读出数据到一个数组
     readString(REMOTEFILEPATH,READFROMHEAD,len,readStr);

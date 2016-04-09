@@ -752,9 +752,10 @@ static void OnGetWanPpoe( int nCmd, int iSubCmd, Dict *d)
 
 static void OnPenetrateData( int nCmd, int iSubCmd, Dict *d)
 {
-#if 0
+#if 1
     char *cData = DictGetStr(d, HK_KEY_DEVPARAM );
     printf("scc...Penetrate...%s...\n",cData );
+    printf("_####____####__________%s___####_______####____",cData);
 
     char *cDevid = DictGetStr( d, HK_KEY_FROM );
     char *cUserid = DictGetStr( d, HK_KEY_TO );
@@ -2618,6 +2619,9 @@ static void OnSetDevParam( int nCmd, int hkid, Dict *d,const char *buf)
             break;
         case HK_MON_433_SET:
             OnSetMon433(nCmd, iSubCmd, hkid, d);
+            break;
+        case HK_PENETRATE_DATA:
+            OnPenetrateData(nCmd, iSubCmd, d);
             break;
         default:
             break;
